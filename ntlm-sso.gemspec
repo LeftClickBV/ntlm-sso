@@ -1,10 +1,9 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "ntlm-sso/version"
 
 Gem::Specification.new do |s|
   s.name        = "ntlm-sso"
-  s.version     = Rack::Auth::NTLMSSO::VERSION
+  s.version     = "0.0.1"
   s.authors     = ["rekado"]
   s.email       = ["rekado@elephly.net"]
   s.homepage    = "http://github.com/rekado/ntlm-sso"
