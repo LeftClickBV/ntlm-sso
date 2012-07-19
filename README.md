@@ -17,7 +17,7 @@ assigned to a default value, dependent on the property `default_remote_user`.
 
 In a rails application you should write an initialiser first. Create a file `config/initializers/ntlm-sso.rb` with the following contents:
 
-~~~
+```ruby
 require 'rack'
 require 'rack/auth/ntlm-sso'
 require 'continuation'
@@ -43,7 +43,7 @@ class NTLMAuthentication
     @app.call(env)
   end
 end
-~~~
+```
 
 You will also need to enable this snippet as middleware to be used in your
 application by adding the line `config.middleware.use "NTLMAuthentication"` to
@@ -66,7 +66,7 @@ denied".
 If you want to bypass this module when the client is not a browser, you can
 modify the `call` function:
 
-~~~
+```ruby
   def call(env)
     req = Rack::Request.new(env)
 
@@ -86,4 +86,4 @@ modify the `call` function:
 
     @app.call(env)
   end
-~~~
+```
