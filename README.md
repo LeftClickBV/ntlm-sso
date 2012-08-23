@@ -13,6 +13,15 @@ If the exchange failed, the `REMOTE_USER` variable will be either left empty or
 assigned to a default value, dependent on the property `default_remote_user`.
 
 
+**NOTE**: The code only causes the server to respond with an NTLM exchange.
+It doesn't actually verify any of the stuff that the browser sends. I've been
+using this only as a way to get the Windows account name (which is configured
+once during IE setup and then locked here) through NTLM. In a situation where
+the remote user can input a user name and password herself (i.e. not in a
+controlled environment), the result is not to be trusted. To verify the LM hash
+in the response you might be able to pass it to Samba's winbind.
+
+
 ## How do I use it?
 
 In a rails application you should write an initialiser first. Create a file `config/initializers/ntlm-sso.rb` with the following contents:
